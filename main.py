@@ -10,12 +10,12 @@ async def parseJson():
     outputfile.write("#CONTENTS_LANGUAGE \"Turkish\"\n\n")
 
     for line in dictfile:
-        word = json.loads(line)
+        kelime = json.loads(line)
 
-        outputfile.write("\n" + str(word["madde"]) + "\n")
+        outputfile.write("\n" + str(kelime["madde"]) + "\n")
 
         try:
-            for anlam in word["anlamlarListe"]:
+            for anlam in kelime["anlamlarListe"]:
                 try:
                     for ozellik in anlam["ozelliklerListe"]:
                         outputfile.write("\t[p]" + str(ozellik["tam_adi"]) + "[/p] ")
@@ -39,7 +39,7 @@ async def parseJson():
             pass
 
         try:
-            for madde in word["atasozu"]:
+            for madde in kelime["atasozu"]:
                 outputfile.write("\t<<" + madde["madde"] + ">> ")
         except KeyError:
             pass
