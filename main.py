@@ -2,8 +2,10 @@ import json
 import asyncio
 
 async def parseJson():
+    outputfilename = "tur-tur_TDKGuncelTurkceSozluk.dsl"
+
     dictfile = open("gts.json", "r", encoding="utf-16")
-    outputfile = open("gts.dsl", "w", encoding="utf-16")
+    outputfile = open(outputfilename, "w", encoding="utf-16")
 
     outputfile.write("#NAME \"TDK Güncel Türkçe Sözlük\"\n")
     outputfile.write("#INDEX_LANGUAGE \"Turkish\"\n")
